@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PAYSTACK_SECRET_KEY = 'sk_test_7219cd376522e4c402c9c282980042bdc7ce2622'; // Replace with .env later
+const paystackSecretKey = process.env.PAYSTACK_SECRET_KEY;
 
 app.post('/pay', async (req, res) => {
   const { email, amount } = req.body;
